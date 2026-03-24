@@ -15,25 +15,6 @@ def astar(grid, start, goal):
 
     while pq:
         _, current = heapq.heappop(pq)
-
-        if current == goal:
-            path = []
-            node = current
-
-            while node in parent:
-                path.append(node)
-                node = parent[node]
-
-            path.append(start)
-            path.reverse()
-
-            print("Path found with cost", len(path) - 1, "using A*")
-
-            
-            formatted = "[" + ", ".join(f"({x},{y})" for x, y in path) + "]"
-            print("Shortest Path:", formatted)
-            return
-
         visited.add(current)
 
         for dx, dy in [(0,1),(1,0),(0,-1),(-1,0)]:

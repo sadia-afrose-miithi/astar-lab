@@ -1,5 +1,5 @@
 import heapq
-
+# This program finds shortest path using A* search algorithm
 # Manhattan distance
 def h(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
